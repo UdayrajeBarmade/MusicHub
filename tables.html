@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Musichub Database Tables</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 20px;
+      background: #f0f0f0;
+      color: #333;
+    }
+    h2 {
+      color: #222;
+      margin-top: 40px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 40px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background: #333;
+      color: #fff;
+    }
+    tr:hover {
+      background: #f9f9f9;
+    }
+    img {
+      height: 50px;
+      border-radius: 4px;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎵 Users Table</h2>
+  <table>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Profile Picture</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Udayraje</td>
+      <td><img src="profile-pic.jpg" alt="Udayraje"></td>
+      <td>Music Lover | Developer</td>
+    </tr>
+  </table>
+
+  <h2>🎨 Artists Table</h2>
+  <table>
+    <tr>
+      <th>Artist ID</th>
+      <th>Name</th>
+      <th>Instagram</th>
+      <th>Twitter</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Cartoon</td>
+      <td><a href="https://instagram.com/cartoon">Instagram</a></td>
+      <td><a href="https://twitter.com/cartoon">Twitter</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>DEAF KEV</td>
+      <td><a href="https://instagram.com/deafkev">Instagram</a></td>
+      <td><a href="https://twitter.com/deafkev">Twitter</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Janji</td>
+      <td><a href="https://instagram.com/janji">Instagram</a></td>
+      <td><a href="https://twitter.com/janji">Twitter</a></td>
+    </tr>
+  </table>
+
+  <h2>💿 Albums Table</h2>
+  <table>
+    <tr>
+      <th>Album ID</th>
+      <th>Title</th>
+      <th>Cover Image</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Best of NCS</td>
+      <td><img src="covers/2.jpg" alt="Best of NCS"></td>
+    </tr>
+  </table>
+
+  <h2>🎶 Songs Table</h2>
+  <table>
+    <tr>
+      <th>Song ID</th>
+      <th>Title</th>
+      <th>File Path</th>
+      <th>Cover Image</th>
+      <th>Duration</th>
+      <th>Artist ID</th>
+      <th>Album ID</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>On & On - Cartoon</td>
+      <td>songs/1.mp3</td>
+      <td><img src="covers/1.jpg" alt="On & On"></td>
+      <td>3:30</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Invincible - DEAF KEV</td>
+      <td>songs/2.mp3</td>
+      <td><img src="covers/2.jpg" alt="Invincible"></td>
+      <td>4:10</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Mortals - DEAF KEV</td>
+      <td>songs/3.mp3</td>
+      <td><img src="covers/3.jpg" alt="Mortals"></td>
+      <td>3:20</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Shine - Cartoon</td>
+      <td>songs/4.mp3</td>
+      <td><img src="covers/4.jpg" alt="Shine"></td>
+      <td>3:45</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Why We Lose - Cartoon</td>
+      <td>songs/5.mp3</td>
+      <td><img src="covers/5.jpg" alt="Why We Lose"></td>
+      <td>3:30</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Sky High - DEAF KEV</td>
+      <td>songs/6.mp3</td>
+      <td><img src="covers/6.jpg" alt="Sky High"></td>
+      <td>3:50</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Symbolism - DEAF KEV</td>
+      <td>songs/7.mp3</td>
+      <td><img src="covers/7.jpg" alt="Symbolism"></td>
+      <td>3:25</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Heroes Tonight - Janji</td>
+      <td>songs/8.mp3</td>
+      <td><img src="covers/8.jpg" alt="Heroes Tonight"></td>
+      <td>3:50</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Feel Good - Cartoon</td>
+      <td>songs/9.mp3</td>
+      <td><img src="covers/9.jpg" alt="Feel Good"></td>
+      <td>3:40</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>My Heart - DEAF KEV</td>
+      <td>songs/10.mp3</td>
+      <td><img src="covers/10.jpg" alt="My Heart"></td>
+      <td>3:50</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+  <h2>⭐ Favorites Table</h2>
+  <table>
+    <tr>
+      <th>Favorite ID</th>
+      <th>User ID</th>
+      <th>Song ID</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+  </table>
+
+</body>
+</html>

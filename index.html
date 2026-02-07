@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Musichub - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/x-icon" href="icon.png"/>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+    <style>
+        /* Add rotating effect for the album art */
+        #bannerImage {
+            transition: transform 1s ease-in-out;
+            border-radius: 50%;
+            width: 150px; /* Adjust size */
+            height: 150px;
+        }
+
+        /* Class to rotate the album art */
+        .rotate {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Start Overlay Section -->
+    <div id="startOverlay">
+        <button id="startButton">Start Music</button>
+    </div>
+
+    <!-- Nav Bar -->
+    <nav>
+        <ul>
+            <li class="brand"><img src="logo.png" alt="Musichub"/> Musichub</li>
+        </ul>
+    </nav>
+
+    <!-- Profile Section -->
+    <div id="profileSection">
+        <img src="profile-pic.jpg" alt="Profile Picture" id="profileImage" class="profilePic"/>
+        <h3>Udayraje</h3>
+        <p>Music Lover | Developer</p>
+        
+        <!-- Toggle User Details Button -->
+        <button id="toggleDetailsButton" class="toggleDetailsButton">Show Details</button>
+
+        <!-- User Details Section -->
+        <div id="userDetails" class="userDetails hidden">
+            <h4>User Details</h4>
+            <p><strong>User Name:</strong> Udayraje</p>
+            <p><strong>User ID:</strong> 12345</p>
+            <h5>Favorite Songs:</h5>
+            <ul id="favoriteSongsList">
+                <li>On & On - Cartoon</li>
+                <li>Invincible - DEAF KEV</li>
+                <li>Heroes Tonight - Janji</li>
+            </ul>
+        </div>
+
+        <!-- Toggle Description Button -->
+        <button id="toggleDescriptionButton" class="toggleDescriptionButton">Show Description</button>
+
+        <!-- Description Section -->
+        <div id="descriptionText" class="descriptionText hidden">
+            <p>Udayraje is a passionate music lover and developer who enjoys exploring new sounds and sharing his music discoveries with the world. He is also dedicated to building cool web applications.</p>
+        </div>
+    </div>
+
+    <!-- Trending Songs Taskbar -->
+    <div class="trendingSongsTaskbar">
+        <h3>Trending Songs</h3>
+        <div id="trendingSongsContainer"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="songList">
+            <h1>Best of NCS - No Copyright Sounds</h1>
+            <div class="songItemContainer" id="songItemContainer"></div>
+        </div>
+
+        <!-- Now Playing Banner -->
+        <div class="songBanner">
+            <h2>Now Playing</h2>
+            <div id="songBannerContent">
+                <img src="covers/1.jpg" id="bannerImage" alt="Now Playing" />
+                <span id="songBannerName">On & On - Cartoon</span>
+
+                <!-- Now Playing Controls -->
+                <div class="nowPlayingControls">
+                    <button id="previousNow">⏮️</button>
+                    <button id="stopNow">⏹️</button>
+                    <button id="nextNow">⏭️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100"/>
+        <div class="icons">
+            <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i>
+        </div>
+        <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+        <div class="songInfo">
+            <img src="playing.gif" width="42px" alt="" id="gif"/>
+            <span id="masterSongName">On &amp; On - Cartoon, Daniel Levi</span>
+        </div>
+    </div>
+
+    <!-- Featured Artists Section -->
+    <div class="artistSection">
+        <h2>Featured Artists</h2>
+        <div id="artistContainer"></div>
+    </div>
+
+    <!-- Social Media & Contact Info -->
+   <div class="mediaSection">
+    <h2>Follow Us</h2>
+    <div class="socialMediaLinks">
+        <a href="https://www.instagram.com/_.udayraje.b07._/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        
+        <a href="https://twitter.com/yourprofile" target="_blank">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+    </div>
+    <div class="address">
+        <h3>Visit Us</h3>
+        <p>1234 Music Lane, Melody City, Musicland</p>
+    </div>
+</div>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Rotating the banner image when the song is playing
+        const bannerImage = document.getElementById('bannerImage');
+
+        function rotateBannerImage() {
+            bannerImage.classList.add('rotate');
+            // Remove the class after the rotation completes to allow it to be applied again
+            setTimeout(() => {
+                bannerImage.classList.remove('rotate');
+            }, 1000); // 1000ms = duration of the rotation
+        }
+
+        // Assuming you trigger the rotation on song play event
+        document.getElementById('masterPlay').addEventListener('click', function() {
+            rotateBannerImage(); // Rotate on play
+        });
+
+        // You could also add event listeners for next/previous to rotate on change
+        document.getElementById('next').addEventListener('click', rotateBannerImage);
+        document.getElementById('previous').addEventListener('click', rotateBannerImage);
+    </script>
+</body>
+</html>
